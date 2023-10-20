@@ -72,3 +72,21 @@ Helpful links:
 * [Effective Modern CMake](https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1)
 * [CMake Documentation: Exporting and Importing Targets](https://gitlab.kitware.com/cmake/community/-/wikis/doc/tutorials/Exporting-and-Importing-Targets)
 * [An Introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/)
+
+# Troubleshooting
+
+If you are getting a lot of red squigless because Intelisense can't find include files, it may be
+because Intelisense has its own include Configuration. YOu can open an editory for the configuration with the command:
+
+```
+  C/C++: Edit configurations (UI)
+```
+
+That is, type ``⌘-P`` then ``> Edit configurations``
+
+
+Or, switch to the c_cpp_properties.json file by clicking on the file link or using the command:
+
+```
+  C/C++: Edit configurations (JSON)
+```
