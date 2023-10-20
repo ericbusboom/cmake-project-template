@@ -153,18 +153,18 @@ install(FILES ${CMakeDemo_INC} DESTINATION ${CMakeDemo_INCLUDE_DEST})
 
 # Write a "version file" in case some wants to only load a particular version of
 # CMakeDemo @BUG this fails at the moment.
-include(CMakePackageConfigHelpers)
-write_basic_package_version_file(
-    CMakeDemoConfigVersion.cmake
-    VERSION ${CMakeDemo_VERSION}
-    COMPATIBILITY AnyNewerVersion
-    )
+# include(CMakePackageConfigHelpers)
+# write_basic_package_version_file(
+#     CMakeDemoConfigVersion.cmake
+#     VERSION ${CMakeDemo_VERSION}
+#    COMPATIBILITY AnyNewerVersion
+#    )
 
 # Copies the resulting CMake config files to the installed library directory
 install(
     FILES 
         "cmake/CMakeDemo-config.cmake"
-        "${CMAKE_CURRENT_BINARY_DIR}/CMakeDemoConfigVersion.cmake"
+ #       "${CMAKE_CURRENT_BINARY_DIR}/CMakeDemoConfigVersion.cmake"
     DESTINATION ${CMakeDemo_LIB_DEST}
     )
 
