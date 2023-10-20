@@ -16,9 +16,13 @@ There is also a baseline `FooBar-config.cmake` file to support transitive depend
  1. Fork the repo
  2. Add your source files to the project. Place source code in `src/`, header files in `include/`, and test code in `tests/`.
  3. Add the names of all source files in the project to the `CMakeLists.txt` in the `src/`, `include/` and `tests/` directories.
- 4. Rename all instances of `FooBar` and `CMAKEDEMO` in all CMake-related files with your desired project name. This includes all `CMakeLists.txt` and the files in `cmake/'.
- 5. Build, compile and run your code.
+ 4. Change the name of the project:
 
+ ```
+    pip install invoke # Only needed once
+    invoke rename <new project name>
+ ```
+ 
 ### Compiling, installing and running your code
 To compile the project, run the following in the project root:
 ```
