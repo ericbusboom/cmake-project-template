@@ -4,14 +4,21 @@
 A base C++ project built with documented CMakeLists.txt
 
 
-This project is meant to be a ready-built setup that can be used to build a C++ project with a library, tests and executables that can be installed and exported for other users to import with `find_package(FooBar)`. 
-Tests are written with the [Catch](https://github.com/catchorg/Catch2) library.
-There is a simple version of a find module in `cmake` for the project, `FindFooBar.cmake`, that searches several environment variables and `/usr/local` for installations of `FooBar`. 
-There is also a baseline `FooBar-config.cmake` file to support transitive dependencies when the project is found via `find_package`.
+This project is meant to be a ready-built setup that can be used to build a
+C++ project with a library, tests and executables that can be installed and
+exported for other users to import with `find_package(CMakeDemo)`. Tests are
+written with the [Catch](https://github.com/catchorg/Catch2) library. There
+is a simple version of a find module in `cmake` for the project,
+`FindCMakeDemo.cmake`, that searches several environment variables and
+`/usr/local` for installations of `CMakeDemo`. There is also a baseline
+`CMakeDemo-config.cmake` file to support transitive dependencies when the
+project is found via `find_package`.
+
 ### Prerequisites
 * CMake >=3.1
 * A C/C++ compiler (tested with gcc 7.5.0)
 * Catch (v2.11.3 is included in `tests/`; overwrite with a more updated version)
+
 ### How to use the template for your project
  1. Fork the repo
  2. Add your source files to the project. Place source code in `src/`, header files in `include/`, and test code in `tests/`.
@@ -44,8 +51,8 @@ or
     ctest
 ```
 
-To add additional dependencies via `find_package`, be sure to also include them in `cmake/FooBar-config.cmake`. 
-`LAPACK` is included as an example. To import a project built with this template in another CMake project, be sure to add the `cmake/FindFooBar.cmake` file to that project's `cmake/` directory.
+To add additional dependencies via `find_package`, be sure to also include them in `cmake/CMakeDemo-config.cmake`. 
+`LAPACK` is included as an example. To import a project built with this template in another CMake project, be sure to add the `cmake/FindCMakeDemo.cmake` file to that project's `cmake/` directory.
 
 File structure:
 ```
@@ -53,8 +60,8 @@ File structure:
     ├── LICENSE
     ├── README.md
     ├── cmake
-    │   ├── FooBar-config.cmake
-    │   └── FindFooBar.cmake
+    │   ├── CMakeDemo-config.cmake
+    │   └── FindCMakeDemo.cmake
     ├── include
     │   ├── CMakeLists.txt
     │   └── source_file.hpp
