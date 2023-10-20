@@ -62,7 +62,6 @@ def update_h(c):
 
 @task
 def update_src(c):
-    """Add source files to the CMake file"""
     proj_dir = Path.cwd()
     project_name = get_current_project_name(proj_dir)
     src_dir = proj_dir / 'src'
@@ -75,9 +74,11 @@ def update_src(c):
 
     # Build regex dynamically based on project name
     regex = re.compile(rf'set\({re.escape(project_name)}_SRC.*?\)', re.DOTALL)
-    new_contents = re.sub(regex, set_command, cmake_lists_contents)
+    new_contents = re.sub(regex, set_command, cmake_lists_contents, count=1)
 
     cmake_lists_path.write_text(new_contents, encoding='utf-8')
+
+
 
 @task
 def rebuild(c):

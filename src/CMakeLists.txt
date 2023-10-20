@@ -11,6 +11,7 @@ set(CMakeDemo_SRC
     source_file.cpp
     )
 
+
 # Form the full path to the source files...
 PREPEND(CMakeDemo_SRC)
 # ... and pass the variable to the parent scope.
