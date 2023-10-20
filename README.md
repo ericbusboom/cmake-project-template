@@ -4,10 +4,10 @@
 A base C++ project built with documented CMakeLists.txt
 
 
-This project is meant to be a ready-built setup that can be used to build a C++ project with a library, tests and executables that can be installed and exported for other users to import with `find_package(CMakeDemo)`. 
+This project is meant to be a ready-built setup that can be used to build a C++ project with a library, tests and executables that can be installed and exported for other users to import with `find_package(-h)`. 
 Tests are written with the [Catch](https://github.com/catchorg/Catch2) library.
-There is a simple version of a find module in `cmake` for the project, `FindCMakeDemo.cmake`, that searches several environment variables and `/usr/local` for installations of `CMakeDemo`. 
-There is also a baseline `CMakeDemo-config.cmake` file to support transitive dependencies when the project is found via `find_package`.
+There is a simple version of a find module in `cmake` for the project, `Find-h.cmake`, that searches several environment variables and `/usr/local` for installations of `-h`. 
+There is also a baseline `-h-config.cmake` file to support transitive dependencies when the project is found via `find_package`.
 ### Prerequisites
 * CMake >=3.1
 * A C/C++ compiler (tested with gcc 7.5.0)
@@ -16,7 +16,7 @@ There is also a baseline `CMakeDemo-config.cmake` file to support transitive dep
  1. Fork the repo
  2. Add your source files to the project. Place source code in `src/`, header files in `include/`, and test code in `tests/`.
  3. Add the names of all source files in the project to the `CMakeLists.txt` in the `src/`, `include/` and `tests/` directories.
- 4. Rename all instances of `CMakeDemo` and `CMAKEDEMO` in all CMake-related files with your desired project name. This includes all `CMakeLists.txt` and the files in `cmake/'.
+ 4. Rename all instances of `-h` and `CMAKEDEMO` in all CMake-related files with your desired project name. This includes all `CMakeLists.txt` and the files in `cmake/'.
  5. Build, compile and run your code.
 
 ### Compiling, installing and running your code
@@ -40,8 +40,8 @@ or
     ctest
 ```
 
-To add additional dependencies via `find_package`, be sure to also include them in `cmake/CMakeDemo-config.cmake`. 
-`LAPACK` is included as an example. To import a project built with this template in another CMake project, be sure to add the `cmake/FindCMakeDemo.cmake` file to that project's `cmake/` directory.
+To add additional dependencies via `find_package`, be sure to also include them in `cmake/-h-config.cmake`. 
+`LAPACK` is included as an example. To import a project built with this template in another CMake project, be sure to add the `cmake/Find-h.cmake` file to that project's `cmake/` directory.
 
 File structure:
 ```
@@ -49,8 +49,8 @@ File structure:
     ├── LICENSE
     ├── README.md
     ├── cmake
-    │   ├── CMakeDemo-config.cmake
-    │   └── FindCMakeDemo.cmake
+    │   ├── -h-config.cmake
+    │   └── Find-h.cmake
     ├── include
     │   ├── CMakeLists.txt
     │   └── source_file.hpp
